@@ -9,7 +9,10 @@ const App = () => {
       `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=7d8db3a49de7c4affd734cb6dfcab991`
     )
       .then((data) => data.json())
-      .then((data) => setData(data));
+      .then((res) => {
+        setData(res);
+        if (res.cod == 200) setQuery("");
+      });
   }
   console.log(data);
   return (
@@ -19,7 +22,7 @@ const App = () => {
         type="text"
         className="search"
         onChange={(e) => {
-          getData(e.target.value)
+          getData(e.target.value);
           setQuery(e.target.value);
         }}
         value={query}
