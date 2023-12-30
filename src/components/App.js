@@ -12,6 +12,9 @@ const App = () => {
       .then((res) => {
         setData(res);
         if (res.cod == 200) setQuery("");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
   console.log(data);
@@ -27,11 +30,7 @@ const App = () => {
         }}
         value={query}
       />
-      {data?.main && (
-        <div className="weather">
-          <h1>{data.main.temp} F</h1>
-        </div>
-      )}
+      <div className="weather">{data?.main && <h1>{data.main.temp} F</h1>}</div>
     </div>
   );
 };
