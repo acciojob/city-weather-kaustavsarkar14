@@ -30,7 +30,7 @@ const App = () => {
         }}
         value={query}
       />
-      <div className="weather">{data?.main && <h1>{data.main.temp} F</h1>}</div>
+      <div className="weather" style={{height:"10rem"}}>{data?.main && <h1>{data.main.temp} F</h1>}</div>
     </div>
   );
 };
