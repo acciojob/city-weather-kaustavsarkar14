@@ -11,7 +11,7 @@ const App = () => {
       .then((data) => data.json())
       .then((res) => {
         setData(res);
-        if (res.cod == 200) setQuery("");
+        // if (res.cod == 200) setQuery("");
       })
       .catch((err) => {
         console.log(err);
